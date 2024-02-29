@@ -69,18 +69,22 @@ const myList = [1, 2, 3, 4, 5]
 // Adding an element to the end of the list
 myList.push(6)
 console.log("Added 6 to the end of the list")
+console.log(myList)
 
 // Removing an element from the end of the list
 myList.pop()
 console.log("Removing an element from the end of the list")
+console.log(myList)
 
 // Adding an element to the front of the list
 myList.unshift(5)
 console.log("Added 5 to the front of the list")
+console.log(myList)
 
 // Removing an element from the front of the list
 myList.shift()
 console.log("Removing an element from the front of the list")
+console.log(myList)
 
 // Accessing elements by index
 console.log(myList[2]); // Output: 3
