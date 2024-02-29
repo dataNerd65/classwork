@@ -6,19 +6,19 @@ class Queue {
 		this.frontIndex = 0
 		this.backIndex = 0
 	}
-    // Add an item to the queue
+    // Add an item to the back of the queue
 	enqueue(item) {
 		this.items[this.backIndex] = item
 		this.backIndex++
 		return item + ' inserted'
 	}
-    // Add an item to the back of the queue
+    // Add an item to the front of the queue
     enqueueBack(item) {
         this.items[this.frontIndex - 1] = item
         this.frontIndex--
         return item + ' inserted'
     }
-    // Remove an item from the queue
+    // Remove an item from the front of the queue
 	dequeue() {
 		const item = this.items[this.frontIndex]
 		delete this.items[this.frontIndex]
@@ -42,7 +42,7 @@ class Queue {
     }
     // Returns the queue
 	get printQueue() {
-		return this.items;
+		return this.items
 	}
 }
 
@@ -50,10 +50,12 @@ class Queue {
 const queue = new Queue()
 console.log(queue.enqueue(7))
 console.log(queue.enqueue(2))
-console.log(queue.enqueue(6))
+console.log(queue.enqueueBack(6))
 console.log(queue.enqueue(4))
 console.log(queue.dequeue())
+console.log(queue.dequeueBack())
 console.log(queue.front())
+console.log(queue.back())
 let str = queue.printQueue;
 console.log(str)
 
@@ -62,18 +64,24 @@ console.log("List")
 
 // Lists
 // Creating a list
-const myList = [1, 2, 3, 4, 5];
+const myList = [1, 2, 3, 4, 5]
 
 // Adding an element to the end of the list
-myList.push(6);
+myList.push(6)
 
 // Removing an element from the end of the list
-const removedElement = myList.pop();
+myList.pop()
+
+// Adding an element to the front of the list
+myList.unshift(5)
+
+// Removing an element from the front of the list
+myList.shift()
 
 // Accessing elements by index
 console.log(myList[2]); // Output: 3
 
 // Iterating through the list
-for (const element of myList) {
-  console.log(element);
-}
+myList.forEach((element) => {
+    console.log(element)
+})
